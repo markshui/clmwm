@@ -1,0 +1,36 @@
+本项目长期维护，项目地址：
+    https://github.com/cocpy/clmwm
+
+Django项目PyCharm IDE尽量使用专业版
+
+
+项目运行条件：
+
+    Redis：
+        安装和使用教程可查看我个人博客：
+            http://cocpy.com/article/10/
+
+    MySQL：
+        新建一个数据库
+        数据库名称：clmwm
+        字符集：utf8 -- UTF-8 Unicode
+        排序规则：utf8_general_ci
+
+    FDFS存储服务：
+        FastDFS是一个很优秀的开源项目，出于学习目的考虑，建议从头搭建，
+        具体教程参考我个人博客或文件中的详细教程：
+            http://cocpy.com/article/7/
+        搭建过程中可能会用到的文件：
+            https://pan.baidu.com/s/1l6vQj3qD0nnPZIy2VV2ZxA 提取码: 0802
+
+        如果搭建有困难，可使用我导出的虚拟机，修改对应IP，再启动tracker、storage和nginx即可，具体查看使用说明：
+            https://pan.baidu.com/s/1_cVkK0cjfaCNql4k1IhywQ 提取码: 0802
+
+
+最后一些setting下的配置文件，出于稳定性考虑，请自行替换：
+百度地图AK
+支付宝应用ID、密钥、支付账号等
+发送邮件配置等
+
+celery启动命令：
+    celery -A celery_execute_task.sendmail worker --loglevel=info -P eventlet
